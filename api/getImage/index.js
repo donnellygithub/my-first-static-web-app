@@ -13,5 +13,4 @@ export async function run(context, req) {
     context.res.json({
         text: callRes
     });
-    context.done;
 };
