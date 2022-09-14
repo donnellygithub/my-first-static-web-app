@@ -41,10 +41,10 @@ btn.addEventListener('click', function (){
         const { text } = await( await fetch(`/api/message2`)).json();
         document.querySelector('#name2').textContent = text;
     }());
-    (async function() {
-        const { text } = await( await fetch(`/api/getImage`)).json();
-        document.querySelector('#image').src = text;
-    }());
+    // (async function() {
+    //     const { text } = await( await fetch(`/api/getImage`)).json();
+    //     document.querySelector('#image').src = text;
+    // }());
     </script>
 </body>
 
