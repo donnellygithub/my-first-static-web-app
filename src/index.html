@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +14,9 @@
     <p>Loading content from the message API: <b id="name2">...</b></p>
     <button id="btnClick">Fetch Now!</button>
     <img id="image">
-    <p>Loading content from the message2 API: <b id="name2">...</b></p>
     </main>
 
-    <script>
+    <script type="module">
         //import fetch from "node-fetch"
         let btn = document.getElementById('btnClick')
         let image = document.getElementById('image')
@@ -32,19 +30,10 @@ btn.addEventListener('click', function (){
     })
     .catch(err=>console.log(err))
 });
-
     (async function() {
-        const { text } = await( await fetch(`/api/message`)).json();
-        document.querySelector('#name').textContent = text;
+        const { text } = await( await fetch(`/api/getImage`)).json();
+        document.querySelector('#image').src = text;
     }());
-    (async function() {
-        const { text } = await( await fetch(`/api/message2`)).json();
-        document.querySelector('#name2').textContent = text;
-    }());
-    // (async function() {
-    //     const { text } = await( await fetch(`/api/getImage`)).json();
-    //     document.querySelector('#image').src = text;
-    // }());
     </script>
 </body>
 

@@ -9,6 +9,6 @@
     "@playwright/test": "^1.22.2"
   },
   "dependencies": {
-    "node-fetch": "^3.2.10"
+    "node-fetch": "^2.6.7"
   }
 }
