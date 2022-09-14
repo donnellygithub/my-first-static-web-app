@@ -10,7 +10,6 @@
 <body>
     <main>
     <h1>Vanilla JavaScript App</h1>
-    <p>Loading content from the message API: <b id="name">...</b></p>
     <p>Loading content from the message API: <b id="name2">...</b></p>
     <button id="btnClick">Fetch Now!</button>
     <img id="image">
@@ -31,9 +30,15 @@ btn.addEventListener('click', function (){
     .catch(err=>console.log(err))
 });
     (async function() {
+        const { text } = await( await fetch(`/api/getString`)).json();
+        document.querySelector('#name2').textContent = text;
+    }());
+
+    (async function() {
         const { text } = await( await fetch(`/api/getImage`)).json();
         document.querySelector('#image').src = text;
     }());
+
     </script>
 </body>
 
