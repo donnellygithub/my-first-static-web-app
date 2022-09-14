@@ -12,12 +12,38 @@
     <main>
     <h1>Vanilla JavaScript App</h1>
     <p>Loading content from the message API: <b id="name">...</b></p>
+    <p>Loading content from the message API: <b id="name2">...</b></p>
+    <button id="btnClick">Fetch Now!</button>
+    <img id="image">
+    <p>Loading content from the message2 API: <b id="name2">...</b></p>
     </main>
 
     <script>
+        //import fetch from "node-fetch"
+        let btn = document.getElementById('btnClick')
+        let image = document.getElementById('image')
+
+btn.addEventListener('click', function (){
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then(res => res.json())
+    .then(result => {
+        console.log(result)
+        image.src = result.message
+    })
+    .catch(err=>console.log(err))
+});
+
     (async function() {
         const { text } = await( await fetch(`/api/message`)).json();
         document.querySelector('#name').textContent = text;
+    }());
+    (async function() {
+        const { text } = await( await fetch(`/api/message2`)).json();
+        document.querySelector('#name2').textContent = text;
+    }());
+    (async function() {
+        const { text } = await( await fetch(`/api/getImage`)).json();
+        document.querySelector('#image').src = text;
     }());
     </script>
 </body>
