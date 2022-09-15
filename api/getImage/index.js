@@ -1,6 +1,6 @@
 // import fetch from 'node-fetch';
 var callRes;
-module.exports = async function (context, req) {
+export async function run(context, req) {
     var callRes = "https:\/\/images.dog.ceo\/breeds\/tervuren\/shadow_and_frisbee.jpg"
     // fetch("https://dog.ceo/api/breeds/image/random")
     // .then(res => res.json())

@@ -1,4 +1,4 @@
-module.exports = async function (context, req) {
+export async function run(context, req) {
     context.res.json({
         text: "Hello from the API"
     });
